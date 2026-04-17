@@ -1,0 +1,32 @@
+[meta]
+version = 1
+name = "Urban Horizon"
+description = "Follow your Urban Horizon system theme."
+variant = "light"
+inherits = "vicinae-light"
+icon = "/home/atif/.local/share/omarchy/icon.png"
+
+[colors.core]
+background = "#ecebea"
+foreground = "#2f3a42"
+secondary_background = "#e4e5e7"
+border = "#9fa7ae"
+accent = "#b29f7f"
+
+[colors.list.item.hover]
+background = "#dddee1"
+foreground = "#2f3a42"
+
+[colors.list.item.selection]
+background = "#d5d7db"
+foreground = "#2f3a42"
+
+[colors.accents]
+blue = "#5f7888"
+green = "#7f9186"
+magenta = "#7f8795"
+orange = "#b29f7f"
+purple = "#99a2af"
+red = "#8a6f5c"
+yellow = "#c4b392"
+cyan = "#8a6f5c"

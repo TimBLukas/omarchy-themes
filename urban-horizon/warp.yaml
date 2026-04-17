@@ -1,0 +1,26 @@
+name: Urban Horizon
+accent: "#8a6f5c"
+cursor: "#9e8270"
+background: "#ecebea"
+foreground: "#2f3a42"
+details: darker
+
+terminal_colors:
+  normal:
+    black:   "#d6d8db"
+    red:     "#8a6f5c"
+    green:   "#7f9186"
+    yellow:  "#b29f7f"
+    blue:    "#5f7888"
+    magenta: "#7f8795"
+    cyan:    "#8a6f5c"
+    white:   "#46545d"
+  bright:
+    black:   "#9fa7ae"
+    red:     "#9e8270"
+    green:   "#93a79b"
+    yellow:  "#c4b392"
+    blue:    "#7892a5"
+    magenta: "#99a2af"
+    cyan:    "#9e8270"
+    white:   "#223039"

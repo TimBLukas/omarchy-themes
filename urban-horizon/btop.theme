@@ -1,0 +1,75 @@
+# ==================================
+#  Urban Horizon BTOP Theme
+# ==================================
+
+# Main background (warm daylight)
+theme[main_bg]="#ecebea"
+
+# Main text (slate foreground)
+theme[main_fg]="#2f3a42"
+
+# Title color (muted bronze accent)
+theme[title]="#8a6f5c"
+
+# Highlights (muted sky blue)
+theme[hi_fg]="#7892a5"
+
+# Selected background (soft stone)
+theme[selected_bg]="#9fa7ae"
+theme[selected_fg]="#2f3a42"
+
+# Inactive text
+theme[inactive_fg]="#9fa7ae"
+
+# Misc process accents (slate)
+theme[proc_misc]="#7f8795"
+
+# Box outlines (muted bronze)
+theme[cpu_box]="#8a6f5c"
+theme[mem_box]="#8a6f5c"
+theme[net_box]="#8a6f5c"
+theme[proc_box]="#8a6f5c"
+
+# Divider line
+theme[div_line]="#9fa7ae"
+
+# ===== Urban Horizon Gradients =====
+
+# Temps: teal → blue → purple
+theme[temp_start]="#8a6f5c"
+theme[temp_mid]="#7892a5"
+theme[temp_end]="#7f8795"
+
+# CPU: teal → green → orange
+theme[cpu_start]="#8a6f5c"
+theme[cpu_mid]="#7f9186"
+theme[cpu_end]="#8a6f5c"
+
+# Free memory: blue → teal
+theme[free_start]="#5f7888"
+theme[free_mid]="#7892a5"
+theme[free_end]="#8a6f5c"
+
+# Cached memory: purple
+theme[cached_start]="#7f8795"
+theme[cached_mid]="#99a2af"
+theme[cached_end]="#99a2af"
+
+# Available memory: green
+theme[available_start]="#7f9186"
+theme[available_mid]="#93a79b"
+theme[available_end]="#93a79b"
+
+# Used memory: orange → yellow
+theme[used_start]="#8a6f5c"
+theme[used_mid]="#b29f7f"
+theme[used_end]="#c4b392"
+
+# Network: green → teal → blue
+theme[download_start]="#7f9186"
+theme[download_mid]="#8a6f5c"
+theme[download_end]="#7892a5"
+
+theme[upload_start]="#7f9186"
+theme[upload_mid]="#8a6f5c"
+theme[upload_end]="#7892a5"

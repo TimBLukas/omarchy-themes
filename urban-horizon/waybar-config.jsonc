@@ -1,0 +1,165 @@
+{
+    // Urban Horizon - Custom Waybar Configuration
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "spacing": 0,
+    "margin-top": 0,
+    "margin-bottom": 0,
+    "margin-left": 0,
+    "margin-right": 0,
+    
+    // Layout: Left modules | Center modules | Right modules
+    "modules-left": ["custom/launcher", "hyprland/workspaces", "hyprland/window"],
+    "modules-center": ["clock"],
+    "modules-right": ["cpu", "memory", "disk", "temperature", "pulseaudio", "network", "battery", "tray", "custom/power"],
+
+    // Custom Launcher
+    "custom/launcher": {
+        "format": "󰣇",
+        "on-click": "walker",
+        "tooltip": false
+    },
+
+    // Hyprland Workspaces
+    "hyprland/workspaces": {
+        "format": "{id}",
+        "on-click": "activate",
+        "all-outputs": true,
+        "active-only": false,
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": []
+        }
+    },
+
+    // Window Title
+    "hyprland/window": {
+        "format": "{}",
+        "max-length": 50,
+        "separate-outputs": true,
+        "rewrite": {
+            "(.*) — Mozilla Firefox": "󰈹 $1",
+            "(.*) - VSCode": "󰨞 $1",
+            "(.*) - Chromium": "󰊯 $1"
+        }
+    },
+
+    // Clock
+    "clock": {
+        "format": " {:%H:%M}",
+        "format-alt": " {:%A, %B %d, %Y}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#b29f7f'><b>{}</b></span>",
+                "days": "<span color='#2f3a42'>{}</span>",
+                "weeks": "<span color='#5f7888'><b>W{}</b></span>",
+                "weekdays": "<span color='#8a6f5c'><b>{}</b></span>",
+                "today": "<span color='#8a6f5c'><b><u>{}</u></b></span>"
+            }
+        }
+    },
+
+    // CPU
+    "cpu": {
+        "interval": 3,
+        "format": " {usage}%",
+        "format-alt": " {avg_frequency}GHz",
+        "tooltip": true,
+        "on-click": "kitty -e btop"
+    },
+
+    // Memory
+    "memory": {
+        "interval": 5,
+        "format": " {percentage}%",
+        "format-alt": " {used:0.1f}G/{total:0.1f}G",
+        "tooltip-format": "RAM: {used:0.1f}GB / {total:0.1f}GB\nSwap: {swapUsed:0.1f}GB / {swapTotal:0.1f}GB",
+        "on-click": "kitty -e btop"
+    },
+
+    // Disk
+    "disk": {
+        "interval": 30,
+        "format": "󰋊 {percentage_used}%",
+        "path": "/",
+        "tooltip-format": "Used: {used} / {total}\nFree: {free} ({percentage_free}%)",
+        "on-click": "kitty -e btop"
+    },
+
+    // Temperature
+    "temperature": {
+        "critical-threshold": 80,
+        "interval": 5,
+        "format": "{icon} {temperatureC}°C",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip": false
+    },
+
+    // Audio/Volume
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰖁 {volume}%",
+        "format-icons": {
+            "headphone": "󰋋",
+            "hands-free": "󰋎",
+            "headset": "󰋎",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "scroll-step": 5,
+        "on-click": "pavucontrol",
+        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "tooltip-format": "{desc}\nVolume: {volume}%"
+    },
+
+    // Network
+    "network": {
+        "interval": 5,
+        "format-wifi": "󰖩 {signalStrength}%",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "󰖪",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)\n󰓢 {bandwidthUpBytes}  󰓦 {bandwidthDownBytes}",
+        "tooltip-format-ethernet": "{ifname}\n󰓢 {bandwidthUpBytes}  󰓦 {bandwidthDownBytes}",
+        "on-click": "nm-connection-editor"
+    },
+
+    // Battery
+    "battery": {
+        "interval": 10,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰚥 {capacity}%",
+        "format-full": "󰁹 {capacity}%",
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "tooltip-format": "{timeTo}\nPower: {power}W"
+    },
+
+    // System Tray
+    "tray": {
+        "icon-size": 16,
+        "spacing": 8,
+        "show-passive-items": true
+    },
+
+    // Power Menu
+    "custom/power": {
+        "format": "⏻",
+        "on-click": "wlogout",
+        "tooltip": false
+    }
+}

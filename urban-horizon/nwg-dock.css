@@ -1,0 +1,20 @@
+window {
+    background: #ecebea; /* Warm light background */
+    border-color: #8a6f5c; /* Clay accent border */
+    border: 2px solid #8a6f5c;
+    border-radius: 10px;
+}
+
+button,
+image {
+    color: #2f3a42; /* Primary foreground */
+}
+
+button {
+    color: #46545d; /* Secondary foreground */
+    padding: 3px;
+}
+
+button:hover {
+    background-color: rgba(138, 111, 92, 0.3); /* Clay hover */
+}

@@ -1,0 +1,32 @@
+[meta]
+version = 1
+name = "Aurora"
+description = "Follow your Aurora system theme."
+variant = "dark"
+inherits = "vicinae-dark"
+icon = "/home/atif/.local/share/omarchy/icon.png"
+
+[colors.core]
+background = "#1a1f2e"
+foreground = "#e5e9f0"
+secondary_background = "#1d222f"
+border = "#4c566a"
+accent = "#ebcb8b"
+
+[colors.list.item.hover]
+background = "#22273a"
+foreground = "#e5e9f0"
+
+[colors.list.item.selection]
+background = "#24293c"
+foreground = "#e5e9f0"
+
+[colors.accents]
+blue = "#5e81ac"
+green = "#a3be8c"
+magenta = "#b48ead"
+orange = "#ebcb8b"
+purple = "#c898be"
+red = "#d08770"
+yellow = "#f0d99c"
+cyan = "#d08770"

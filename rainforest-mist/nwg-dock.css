@@ -1,0 +1,20 @@
+window {
+    background: #181d1a; /* Deep forest shadow */
+    border-color: #7a9e7e; /* Soft moss border */
+    border: 2px solid #7a9e7e;
+    border-radius: 10px;
+}
+
+button,
+image {
+    color: #d8e5dd; /* Misty cloud foreground */
+}
+
+button {
+    color: #d8e5dd; /* Misty cloud */
+    padding: 3px;
+}
+
+button:hover {
+    background-color: rgba(122, 158, 126, 0.3); /* Soft moss hover */
+}

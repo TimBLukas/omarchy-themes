@@ -1,0 +1,75 @@
+# =============================
+#  Misty Rainforest BTOP Theme
+# =============================
+
+# Main background (deep forest shadow)
+theme[main_bg]="#181d1a"
+
+# Main text (misty cloud)
+theme[main_fg]="#d8e5dd"
+
+# Title color (soft moss)
+theme[title]="#7a9e7e"
+
+# Highlights (turquoise water)
+theme[hi_fg]="#6ba89f"
+
+# Selected background (dark forest)
+theme[selected_bg]="#2a3a30"
+theme[selected_fg]="#d8e5dd"
+
+# Inactive text
+theme[inactive_fg]="#2a3a30"
+
+# Misc process accents (fog gray)
+theme[proc_misc]="#7a8c8e"
+
+# Box outlines (soft moss)
+theme[cpu_box]="#7a8c8e"
+theme[mem_box]="#5a8e7a"
+theme[net_box]="#6ba89f"
+theme[proc_box]="#7a9e7e"
+
+# Divider line
+theme[div_line]="#2a3a30"
+
+# ===== Rainforest Gradients =====
+
+# Temps: moss → turquoise → fog
+theme[temp_start]="#7a9e7e"
+theme[temp_mid]="#6ba89f"
+theme[temp_end]="#7a8c8e"
+
+# CPU: fog → jade → moss
+theme[cpu_start]="#7a8c8e"
+theme[cpu_mid]="#5a8e7a"
+theme[cpu_end]="#7a9e7e"
+
+# Free memory: jade → turquoise
+theme[free_start]="#5a8e7a"
+theme[free_mid]="#6ba89f"
+theme[free_end]="#7dbfb5"
+
+# Cached memory: fog
+theme[cached_start]="#7a8c8e"
+theme[cached_mid]="#8a9c9e"
+theme[cached_end]="#8a9c9e"
+
+# Available memory: fern
+theme[available_start]="#8eb891"
+theme[available_mid]="#9ec9a1"
+theme[available_end]="#9ec9a1"
+
+# Used memory: moss → fern
+theme[used_start]="#7a9e7e"
+theme[used_mid]="#8eb891"
+theme[used_end]="#9ec9a1"
+
+# Network: jade → turquoise → bright water
+theme[download_start]="#5a8e7a"
+theme[download_mid]="#6ba89f"
+theme[download_end]="#7dbfb5"
+
+theme[upload_start]="#5a8e7a"
+theme[upload_mid]="#6ba89f"
+theme[upload_end]="#7dbfb5"

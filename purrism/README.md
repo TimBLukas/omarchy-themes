@@ -4,7 +4,7 @@ A glass themed omarchy theme
 
 This theme uses the Cattpuccin-mocha [palette](https://catppuccin.com/palette/) with a glass background, as a base and applied several additional changes to match my personal style.
 
-<img width="3840" height="2160" alt="preview" src="https://github.com/user-attachments/assets/079c6414-2c7a-4fe0-8172-be8f3d3fd04f" />
+<img width="3840" height="2160" alt="preview" src="https://github.com/TimBLukas/omarchy-themes/blob/main/purrism/preview.png" />
 
 
 # Credits

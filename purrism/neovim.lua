@@ -135,6 +135,8 @@ return {
 						Special = muted,
 						Delimiter = muted,
 						Operator = muted,
+						LineNr = { fg = colors.overlay1 },
+						CursorLineNr = { fg = colors.text },
 
 						["@lsp.type.function"] = text,
 						["@lsp.type.method"] = text,
@@ -184,6 +186,7 @@ return {
 			})
 
 			vim.cmd.colorscheme("catppuccin")
+			vim.api.nvim_set_hl(0, "LineNr", { fg = "E6E8EB" })
 		end,
 	},
 

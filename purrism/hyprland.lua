@@ -36,7 +36,10 @@ hl.config({
 		gaps_in = 6,
 		gaps_out = 10,
 		border_size = 1,
-		col = { active_border = "rgba(ffffff80) rgba(ffffff18) 135deg", inactive_border = "rgba(ffffff14)" },
+		col = {
+			active_border = { colors = { "rgba(ffffff80)", "rgba(ffffff18)" }, angle = 135 },
+			inactive_border = "rgba(ffffff14)",
+		},
 		resize_on_border = true,
 		allow_tearing = false,
 		layout = "dwindle",
@@ -74,7 +77,7 @@ hl.config({
 
 	group = {
 		col = {
-			border_active = "rgba(ffffff80) rgba(ffffff18) 135deg",
+			border_active = { colors = { "rgba(ffffff80)", "rgba(ffffff18)" }, angle = 135 },
 			border_inactive = "rgba(ffffff14)",
 			border_locked_active = { colors = { "rgba(ff990088)", "rgba(ff990022)" }, angle = 90 },
 			border_locked_inactive = "rgba(3a3a3a77)",
@@ -112,12 +115,6 @@ hl.layer_rule({
 })
 
 hl.layer_rule({
-	match = { namespace = "waybar" },
-	blur = true,
-	ignore_alpha = 0.1,
-})
-
-hl.layer_rule({
 	match = { namespace = "notifications" },
 	blur = true,
 	ignore_alpha = 0.2,
@@ -133,4 +130,3 @@ hl.layer_rule({
 	match = { namespace = "hyprlock" },
 	blur = true,
 })
-

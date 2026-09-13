@@ -1,0 +1,87 @@
+@define-color text #8cff8c;
+@define-color base #020a04;
+@define-color border #2a6b36;
+@define-color foreground #b0ffb0;
+@define-color cream #8cff8c;
+@define-color background #030f06;
+@define-color hover #092611;
+@define-color accent #66ff66;
+@define-color accent-soft #123d1a;
+
+* {
+  all: unset;
+}
+
+window * {
+  font-family: "Adwaita Mono";
+  font-size: 15px;
+  color: @text;
+}
+
+window,
+window child {
+  background: transparent;
+  border-radius: 0;
+}
+
+window .box-wrapper,
+.box-wrapper {
+  background: @background;
+  padding: 14px;
+  border: 1px solid @border;
+  border-radius: 0;
+  box-shadow: inset 0 0 18px rgba(102, 255, 102, 0.08);
+}
+
+window .search,
+.search-container {
+  background: @base;
+  border: 1px solid @border;
+  border-radius: 0;
+  color: @foreground;
+  padding: 9px 12px;
+  margin: 6px 3px 10px 3px;
+}
+
+window .search:focus-within,
+.search-container:focus-within {
+  background: @hover;
+  border-color: @accent;
+}
+
+child:hover .item-box {
+  background: @hover;
+}
+
+child:selected .item-box {
+  background: @accent-soft;
+  border: 1px solid @accent;
+}
+
+.item-box {
+  padding: 9px 12px;
+  border-radius: 0;
+  border: 1px solid transparent;
+}
+
+.item-text-box {
+  all: unset;
+  padding: 4px 0;
+}
+
+.item-text {
+  font-size: 14px;
+}
+
+.item-subtext {
+  font-size: 12px;
+  color: @border;
+}
+
+.item-quick-activation {
+  color: @cream;
+  background: @base;
+  border: 1px solid @border;
+  border-radius: 0;
+  padding: 2px 6px;
+}

@@ -1,0 +1,34 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = '$username$directory$git_branch$git_status$character'
+palette = 'apple_ii'
+
+[username]
+show_always = true
+style_user = 'bold phosphor'
+style_root = 'bold phosphor-bright'
+format = '[$user]($style) '
+
+[directory]
+style = 'bold phosphor'
+format = '[$path]($style) '
+truncation_length = 3
+truncation_symbol = '.../'
+
+[git_branch]
+symbol = 'git:'
+style = 'phosphor'
+format = '[$symbol$branch]($style) '
+
+[git_status]
+style = 'phosphor-dim'
+format = '([$all_status$ahead_behind]($style)) '
+
+[character]
+success_symbol = '[>](bold phosphor)'
+error_symbol = '[>](bold phosphor-bright)'
+
+[palettes.apple_ii]
+phosphor = '#66ff66'
+phosphor-bright = '#a0ffa0'
+phosphor-dim = '#3c8f4c'

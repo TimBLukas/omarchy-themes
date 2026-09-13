@@ -1,0 +1,41 @@
+[font]
+normal = { family = "Adwaita Mono" }
+bold = { family = "Adwaita Mono" }
+italic = { family = "Adwaita Mono" }
+size = 14
+
+[window]
+opacity = 1.0
+padding = { x = 12, y = 12 }
+
+[colors.primary]
+background = "#020a04"
+foreground = "#8cff8c"
+
+[colors.cursor]
+text = "#020a04"
+cursor = "#66ff66"
+
+[colors.selection]
+text = "#b0ffb0"
+background = "#123d1a"
+
+[colors.normal]
+black = "#020a04"
+red = "#4bbf59"
+green = "#66ff66"
+yellow = "#58d866"
+blue = "#5fca6d"
+magenta = "#7af07f"
+cyan = "#72e878"
+white = "#8cff8c"
+
+[colors.bright]
+black = "#2a6b36"
+red = "#7dff88"
+green = "#a0ffa0"
+yellow = "#8aff91"
+blue = "#91ff99"
+magenta = "#b8ffb8"
+cyan = "#a8ffad"
+white = "#b0ffb0"

@@ -1,14 +1,29 @@
 return {
+	-- ============================================================
+	-- THEME SELECTION
+	-- ============================================================
+	--
+	-- Options:
+	--   "monochrome" -> your custom monochrome Catppuccin
+	--   "rose-pine"  -> Rosé Pine
+	--
+	local_theme = "rose-pine",
+
+	-- ============================================================
+	-- CATPPUCCIN
+	-- ============================================================
 	{
 		"catppuccin/nvim",
 		name = "catppuccin",
 		priority = 1000,
 
 		config = function()
-			-- Disable LSP semantic tokens so language servers don't re-color functions/parameters
+			-- Disable LSP semantic tokens so language servers don't
+			-- re-color functions/parameters independently.
 			vim.api.nvim_create_autocmd("LspAttach", {
 				callback = function(args)
 					local client = vim.lsp.get_client_by_id(args.data.client_id)
+
 					if client then
 						client.server_capabilities.semanticTokensProvider = nil
 					end
@@ -24,7 +39,9 @@ return {
 					solid = false,
 				},
 
-				-- Ultra-minimal monochrome palette
+				-- ====================================================
+				-- MONOCHROME PALETTE
+				-- ====================================================
 				color_overrides = {
 					mocha = {
 						-- Foreground
@@ -47,7 +64,7 @@ return {
 						mantle = "#131519",
 						crust = "#0F1114",
 
-						-- Semantic colors → monochrome
+						-- Semantic colors -> monochrome
 						rosewater = "#E6E8EB",
 						flamingo = "#E6E8EB",
 						pink = "#D4D7DC",
@@ -68,31 +85,42 @@ return {
 					},
 				},
 
+				-- ====================================================
+				-- MONOCHROME HIGHLIGHTS
+				-- ====================================================
 				custom_highlights = function(colors)
 					local text = { fg = colors.text }
 					local muted = { fg = colors.subtext1 }
-					local comment = { fg = colors.overlay2, italic = true }
+					local comment = {
+						fg = colors.overlay2,
+						italic = true,
+					}
 
 					return {
 						["@variable"] = text,
 						["@variable.builtin"] = text,
 						["@variable.parameter"] = text,
 						["@variable.member"] = text,
+
 						["@function"] = text,
 						["@function.call"] = text,
 						["@function.method"] = text,
 						["@function.method.call"] = text,
 						["@function.builtin"] = text,
 						["@function.macro"] = text,
+
 						["@parameter"] = text,
 						["@parameter.reference"] = text,
 						["@property"] = text,
 						["@field"] = text,
+
 						["@type"] = text,
 						["@type.builtin"] = text,
 						["@type.definition"] = text,
 						["@type.qualifier"] = text,
+
 						["@constructor"] = text,
+
 						["@keyword"] = text,
 						["@keyword.function"] = text,
 						["@keyword.return"] = text,
@@ -100,44 +128,67 @@ return {
 						["@keyword.import"] = text,
 						["@keyword.conditional"] = text,
 						["@keyword.repeat"] = text,
+
 						["@constant"] = text,
 						["@constant.builtin"] = text,
 						["@constant.macro"] = text,
+
 						["@number"] = text,
 						["@boolean"] = text,
 						["@label"] = text,
 						["@tag"] = text,
-						["@tag.attribute"] = text,
-						["@markup.heading"] = { fg = colors.text, bold = true },
-						["@markup.bold"] = { fg = colors.text, bold = true },
-						["@markup.italic"] = { fg = colors.subtext1, italic = true },
 
-						-- Punctuation, operators, strings
+						["@markup.heading"] = {
+							fg = colors.text,
+							bold = true,
+						},
+
+						["@markup.bold"] = {
+							fg = colors.text,
+							bold = true,
+						},
+
+						["@markup.italic"] = {
+							fg = colors.subtext1,
+							italic = true,
+						},
+
+						-- Punctuation, operators and strings
 						["@operator"] = muted,
 						["@punctuation.bracket"] = muted,
 						["@punctuation.delimiter"] = muted,
 						["@punctuation.special"] = muted,
 						["@tag.delimiter"] = muted,
+
 						["@string"] = muted,
 						["@string.escape"] = muted,
 						["@string.special"] = muted,
 
 						["@comment"] = comment,
 
+						-- Vim syntax groups
 						Function = text,
 						Identifier = text,
 						Statement = text,
 						Type = text,
 						Constant = text,
 						PreProc = text,
+
 						String = muted,
 						Comment = comment,
 						Special = muted,
 						Delimiter = muted,
 						Operator = muted,
-						LineNr = { fg = colors.overlay1 },
-						CursorLineNr = { fg = colors.text },
 
+						LineNr = {
+							fg = colors.overlay1,
+						},
+
+						CursorLineNr = {
+							fg = colors.text,
+						},
+
+						-- LSP semantic groups
 						["@lsp.type.function"] = text,
 						["@lsp.type.method"] = text,
 						["@lsp.type.parameter"] = text,
@@ -162,19 +213,23 @@ return {
 					treesitter = true,
 					telescope = true,
 					which_key = true,
+
 					indent_blankline = {
 						enabled = true,
 						scope_color = "overlay2",
 						colored_indent_levels = false,
 					},
+
 					native_lsp = {
 						enabled = true,
+
 						virtual_text = {
 							errors = { "italic" },
 							hints = { "italic" },
 							warnings = { "italic" },
 							information = { "italic" },
 						},
+
 						underlines = {
 							errors = { "undercurl" },
 							hints = { "undercurl" },
@@ -185,15 +240,55 @@ return {
 				},
 			})
 
-			vim.cmd.colorscheme("catppuccin")
-			vim.api.nvim_set_hl(0, "LineNr", { fg = "E6E8EB" })
+			-- Only activate Catppuccin when selected.
+			if vim.g.my_theme == "monochrome" then
+				vim.cmd.colorscheme("catppuccin")
+
+				vim.api.nvim_set_hl(0, "LineNr", {
+					fg = "#E6E8EB",
+				})
+			end
 		end,
 	},
 
+	-- ============================================================
+	-- ROSÉ PINE
+	-- ============================================================
+	{
+		"rose-pine/neovim",
+		name = "rose-pine",
+		priority = 1000,
+
+		config = function()
+			require("rose-pine").setup({
+				disable_background = true,
+
+				styles = {
+					italic = false,
+				},
+			})
+
+			-- Only activate Rosé Pine when selected.
+			if vim.g.my_theme == "rose-pine" then
+				vim.cmd.colorscheme("rose-pine")
+			end
+		end,
+	},
+
+	-- ============================================================
+	-- LAZYVIM
+	-- ============================================================
 	{
 		"LazyVim/LazyVim",
-		opts = {
-			colorscheme = "catppuccin",
-		},
+		opts = function(_, opts)
+			-- Set the selected theme.
+			vim.g.my_theme = "monochrome"
+
+			if vim.g.my_theme == "rose-pine" then
+				opts.colorscheme = "rose-pine"
+			else
+				opts.colorscheme = "catppuccin"
+			end
+		end,
 	},
 }

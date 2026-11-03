@@ -1,0 +1,59 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[](cedar)\
+$username\
+[](bg:wood fg:cedar)\
+$directory\
+[](bg:moss fg:wood)\
+$git_branch\
+$git_status\
+[](fg:moss bg:water)\
+$all\
+[](fg:water bg:teal)\
+$time\
+[ ](fg:teal)\
+$character"""
+
+palette = 'japan_temple'
+
+[username]
+show_always = true
+style_user = "bg:cedar fg:fog"
+style_root = "bg:cedar fg:fog"
+format = '[ $user ]($style)'
+
+[directory]
+style = "bg:wood fg:ink"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[git_branch]
+symbol = ""
+style = "bg:moss"
+format = '[[ $symbol $branch ](fg:ink bg:moss)]($style)'
+
+[git_status]
+style = "bg:moss"
+format = '[[($all_status$ahead_behind )](fg:ink bg:moss)]($style)'
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:teal"
+format = '[[  $time ](fg:ink bg:teal)]($style)'
+
+[character]
+success_symbol = '[❯](bold fg:moss)'
+error_symbol = '[❯](bold fg:red)'
+
+[palettes.japan_temple]
+ink = "#0b1114"
+cedar = "#182328"
+wood = "#c49a78"
+moss = "#8eaa86"
+water = "#83b9b6"
+teal = "#86b8b0"
+fog = "#d6e2df"
+red = "#c9857d"

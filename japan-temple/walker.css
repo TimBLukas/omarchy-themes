@@ -1,0 +1,78 @@
+@define-color text #d6e2df;
+@define-color border rgba(134, 184, 176, 0.25);
+@define-color foreground #e3eeeb;
+@define-color background rgba(24, 35, 40, 0.84);
+@define-color hover rgba(134, 184, 176, 0.08);
+@define-color accent #86b8b0;
+@define-color accent-soft rgba(134, 184, 176, 0.14);
+
+* {
+  all: unset;
+}
+
+window * {
+  font-family: system-ui, -apple-system, "JetBrainsMono Nerd Font", sans-serif;
+  font-size: 15px;
+  color: @text;
+}
+
+window,
+window child {
+  background: transparent;
+  border-radius: 8px;
+}
+
+window .box-wrapper,
+.box-wrapper {
+  background: @background;
+  padding: 14px;
+  border: 1px solid @border;
+  border-radius: 8px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+}
+
+.search-container {
+  background: rgba(227, 238, 235, 0.055);
+  border: 1px solid rgba(214, 226, 223, 0.12);
+  border-radius: 5px;
+  padding: 9px 12px;
+  margin: 6px 3px 10px 3px;
+}
+
+.search-container:focus-within {
+  background: rgba(227, 238, 235, 0.08);
+  border-color: rgba(134, 184, 176, 0.42);
+}
+
+scrollbar {
+  opacity: 0;
+}
+
+child:hover .item-box {
+  background: @hover;
+}
+
+child:selected .item-box {
+  background: @accent-soft;
+  border: 1px solid rgba(134, 184, 176, 0.3);
+}
+
+child:selected .item-box * {
+  color: @foreground;
+}
+
+.item-box {
+  padding: 9px 12px;
+  border-radius: 5px;
+  border: 1px solid transparent;
+}
+
+.item-text {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.item-subtext {
+  font-size: 12px;
+  color: rgba(214, 226, 223, 0.5);
+}

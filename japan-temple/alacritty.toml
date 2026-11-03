@@ -1,0 +1,6 @@
+[font]
+size = 14
+
+[window]
+opacity = 1.0
+padding = { x = 12, y = 12 }
